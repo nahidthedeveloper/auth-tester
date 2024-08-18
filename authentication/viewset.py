@@ -42,6 +42,7 @@ class AuthenticationViewSet(viewsets.ModelViewSet):
                 'token': str(refresh.access_token),
                 'email': user.email,
                 'id': user.id,
+                'name': user.name,
             }, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
